@@ -11,13 +11,20 @@
 </head>
 
 <body class="flex-column min-100-vh">
-  <nav class="navbar">
-    <ul class="flex-row">
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
-    </ul>
-  </nav>
+ <nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Tech Blog</span>
+    <span class="navbar-brand mb-0 h1">
+       <a "nav-link" href="/">Home</a>
+    </span>
+    <span class="navbar-brand mb-0 h1">
+      <a "nav-link" href="/dashboard">Dashboard</a>
+    </span>
+    <span class="navbar-brand mb-0 h1">
+     <a "nav-link" href="#" id="logout-link">Logout</a>
+    </span>
+  </div>
+</nav>
   <header class="hero">
     <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
   </header>
@@ -43,9 +50,9 @@
     {{{body}}}
   </main>
 
-  <footer class="footer flex-row justify-center">
+  {{!-- <footer class="footer flex-row justify-center">
     <a href="/dashboard/new">➕ New Post</a>
-  </footer>
+  </footer> --}}
 </body>
 
 <script src="/js/dashboard.js"></script>
