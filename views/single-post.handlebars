@@ -1,17 +1,19 @@
 <div class="post">
+  {{#each post as |post|}}
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>{{post.title}}</h2>
       <div>
-        Posted by {{post.User.username}} on {{format_date post.createdAt}}
+        Posted by {{User.username}} 
       </div>
     </div>
     <div class="card-body">
-      {{post.body}}
+      {{post.content}}
     </div>
+    {{/each}}
   </article>
 
-  {{#if post.Comments}}
+  {{!-- {{#if post.Comments}}
     <section class="card">
       <div class="card-header">
         <h3>Comments</h3>
@@ -24,7 +26,7 @@
               {{body}}
             </p>
             <p>
-              &mdash; {{User.username}}, {{format_date createdAt}}
+              &mdash; {{User.username}}
             </p>
           </div>
         {{/each}}
@@ -47,6 +49,6 @@
       <button type="submit" class="btn">Submit</button>
     </div>
   </form>
-</div>
+</div> --}}
 
 <script src="/js/comment.js"></script>

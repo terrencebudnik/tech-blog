@@ -1,17 +1,14 @@
 <div class="posts">
-  {{#each post}}
+  {{#each post as |post|}}
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>
-        <a href="/posts/{{post_id}}">{{title}}</a>
+        <a href="/posts/{{post.post_id}}">{{post.title}}</a>
       </h2>
     </div>
-    <div class="card-body">
-      {{content}}
-    </div>
     <div>
-        Posted by {{User.username}} 
-      </div>
+      Posted by {{User.username}} on {{date_created}};
+    </div>
   </article>
   {{/each}}
 </div>
