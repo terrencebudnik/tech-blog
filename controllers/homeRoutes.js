@@ -15,21 +15,18 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('posts/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
-        {
-          model: User,
-        },
+        User
       ],
     });
 
     const post = postData.get({ plain: true });
 
-    res.render("single-post",{
-      layout: "dashboard",
-      post })
+    res.render("single-post", {post})
+  
   } catch (err) {
     res.status(500).json(err);
   }
@@ -58,6 +55,12 @@ router.get('/dashboard', withAuth, async (req, res) => {
     post })
 
 });
+
+router.get('/create', withAuth, async (req, res) => {
+  res.render("new-post",{
+    layout: "dashboard"})
+});
+
 
 
 

@@ -18,7 +18,8 @@ function newPost(event) {
     headers: { 'Content-Type': 'application/json' }
   }).then(response => response.json())
     .then(response => {
-      if (response.ok) {
+      console.log(response)
+      if (!response.ok) {
         console.log('Post successful')
         document.location.replace('/dashboard');
       } else {

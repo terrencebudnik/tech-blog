@@ -1,16 +1,21 @@
-<div class="post card">
-  <div class="card-header">
-    <h2>Create New Post</h2>
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="post card">
+          <form id="new-post-form" class="card-body">
+            <h4 class="card-title">Post Title:
+              <input type="text" name="post-title" class="form-input" id="post-title" />
+            </h4>
+            <h5 class="card-title">Post Content:
+              <textarea name="post-body" class="form-input" id="post-content"></textarea>
+              </h3>
+              <div class="card-body">
+                <button type="submit" class="btn btn-primary" id="post-btn">Create</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-  <form id="new-post-form" class="card-body">
-    <label class="form-label" for="post-title">Title</label>
-    <input type="text" name="post-title" class="form-input" />
-
-    <label class="form-label" for="post-body">Content</label>
-    <textarea name="post-body" class="form-input"></textarea>
-
-    <button type="submit" class="btn">Create</button>
-  </form>
-</div>
-
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/js/new.js"></script>
