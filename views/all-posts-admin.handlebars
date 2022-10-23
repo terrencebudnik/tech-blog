@@ -1,8 +1,35 @@
-<div class="posts list-group">
+<div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-header">
+            <h2>My Posts</h2>
+            <div class="card-body" id="prev-posts">
+              <div class="card">
+                {{#each post}}
+                <div class="card-header" id="prev-posts-title">{{title}}</div>
+                <div class="card-body" id="prev-posts-content"> {{content}}</div>
+                <div class="card-body">
+                <button type="submit" class="btn btn-primary" id="delete-btn">Delete</button>
+              </div>
+                 {{/each}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+{{!-- <div class="posts list-group">
   {{#each posts}}
     <a class="list-item flex-row justify-space-between" href="/dashboard/edit/{{id}}">
       <span>{{title}}</span>
       <span>{{format_date createdAt}}</span>
     </a>
   {{/each}}
-</div>
+</div> --}}
