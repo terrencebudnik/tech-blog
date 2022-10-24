@@ -1,5 +1,4 @@
 <div class="post">
-  {{#each post as |post|}}
   <article class="card">
     <div class="card-header flex-row justify-space-between">
       <h2>{{post.title}}</h2>
@@ -10,7 +9,6 @@
     <div class="card-body">
       {{post.content}}
     </div>
-    {{/each}}
   </article>
 
   {{#if post.Comments}}
@@ -40,15 +38,16 @@
     </div>
 
     <div class="card-body">
-      <input type="hidden" name="post-id" value="{{post.id}}" />
+      <input type="hidden" name="post-id" value="{{post.post_id}}" />
 
       <label class="form-label" for="comment-body">Comment</label>
 
-      <textarea name="comment-body" class="form-input"></textarea>
+      <input name="comment-body" class="form-input" id="comment-content"></input>
 
-      <button type="submit" class="btn">Submit</button>
+      <button type="submit" class="btn btn-primary" id="comment-btn">Submit</button>
     </div>
   </form>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="/js/comment.js"></script>

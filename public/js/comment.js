@@ -1,23 +1,26 @@
-function newPost(event) {
+const commentBtn = $("#comment-btn");
+
+function newComment(event) {
     event.preventDefault();
-    const postTitle = $("#post-title");
-    const postContent = $("#post-content");
-    const newPost = {
-      title: postTitle.val(),
-      content: postContent.val()
+    const commentContent = $("#comment-content");
+    const newComment = {
+      body: commentContent.val()
     };
-    fetch('/api/posts', {
+    fetch('/api/comments', {
       method: "POST",
-      body: JSON.stringify(newPost),
+      body: JSON.stringify(newComment),
       headers: { 'Content-Type': 'application/json' }
     }).then(response => response.json())
-      .then(response => {
-        if (response.ok) {
-          console.log('Post successful')
-          document.location.replace('/dashboard');
-        } else {
-          alert('Failed to create post');
-        }
-      })
-  
-  };
+    .then(response => {
+      console.log(response)
+      if (!response.ok) {
+        console.log('Comment successful')
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to create comment');
+      }
+    })
+
+};
+
+  commentBtn.on('click', newComment);
